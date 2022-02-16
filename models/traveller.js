@@ -29,7 +29,12 @@ Traveller.prototype.calculateTotalDistanceTravelled = function () {
 };
 
 Traveller.prototype.getUniqueModesOfTransport = function () {
-
+  const modesOfTransport = this.journeys.map(journey => journey.transport);
+  // Then I need to make a new array with only unique values using set
+  const uniqueModesTransport = new Set()
+  modesOfTransport.forEach(mode => uniqueModesTransport.add(mode) )
+  // I return an array created from my set
+  return Array.from(uniqueModesTransport)
 };
 
 
